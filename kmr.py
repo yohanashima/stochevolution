@@ -51,6 +51,7 @@ P = mk_matrix1(N, ep, p)
 X_t = mc_sample_path(P, init=randint(1, N), sample_size=T)
 
 plt.plot(X_t)
+plt.savefig('kmr0_distribution.png')
 plt.show()
 
 barX = []
@@ -58,10 +59,12 @@ for i in range(N+1):
     count = sum([r == i for r in X_t])
     barX.append(count)
 plt.plot(barX)
+plt.savefig('kmr0_frequency.png')
 plt.show()
 
 SD = mc_compute_stationary(P)
 plt.hist(SD)
+plt.savefig('kmr0_hist.png')
 plt.show()
 		
 		
